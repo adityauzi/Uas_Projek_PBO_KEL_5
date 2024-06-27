@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 
 import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
 
 public class cTextFields extends JTextField {
 
@@ -17,7 +18,8 @@ public class cTextFields extends JTextField {
         setFont(new Font("Poppins",Font.PLAIN, 20));
         setLayout(null);
 
-        setBorder(new cRoundedBorder(radius,Color.black));
+        //setBorder(new cRoundedBorder(radius,Color.black));
+        setBorder(new LineBorder(Color.BLACK,1));
     }
 
 }

@@ -103,10 +103,27 @@ public class MainFrame extends JFrame {
                 String penerbit = txtPenerbit.getText();
                 int tahunTerbit = Integer.parseInt(txtTahunCetak.getText());
                 String kategori = kategoriBox.getSelectedItem().toString();
+                int counter = 0;
 
-
+                
+                // dm.addRow(new Object[]{judul,namaPengarang,penerbit,tahunTerbit,kategori});
                 tambahData(judul,namaPengarang,penerbit,tahunTerbit,kategori);
-                dm.addRow(new Object[]{judul,namaPengarang,penerbit,tahunTerbit,kategori});
+                
+                for (int i = 0; i < dataBarang.size(); i++) {
+                    
+                    dm.setRowCount(counter);
+                    String JudulData = dataBarang.get(i).getJudul();
+                    String NamaPengarangData = dataBarang.get(i).getNamaPengarang();
+                    String PenerbitData = dataBarang.get(i).getPenerbit();
+                    int TahunTerbitData = dataBarang.get(i).getTahunTerbit();
+                    String KategoriData = dataBarang.get(i).getKategori();
+
+                    Object[]dataUtama = {JudulData,NamaPengarangData,PenerbitData,TahunTerbitData,KategoriData};
+                    dm.addRow(dataUtama);
+                    
+                    counter++;
+                }
+                
                 txtJudul.setText("");
                 txtNamaPengarang.setText("");
                 txtPenerbit.setText("");
@@ -140,5 +157,9 @@ public class MainFrame extends JFrame {
         dataBarang.add(new dataKomponen(judul,namaPengarang,penerbit,tahunterbit,kategori));
     }
 
+    // private Object tambahData(String judul,String namaPengarang,String penerbit,int tahunterbit,String kategori){
+    //     Object data =  dataBarang.add(new dataKomponen(judul,namaPengarang,penerbit,tahunterbit,kategori));
+    //     return data;
+    // }
 
 }
