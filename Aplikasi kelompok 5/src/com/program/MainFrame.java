@@ -84,7 +84,6 @@ public class MainFrame extends JFrame {
         kategoriBox.addItem("Semua Umur");
         kategoriBox.addItem("Anak-anak");
         kategoriBox.addItem("Dewasa");
-        kategoriBox.addItem("dewasa");
         kategoriBox.addItem("Remaja");
 
 
